@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  name      String
+  password  String
+  master    Boolean
+  createdAt DateTime @default(now())
+  limitUse  Int
+}
+
+model Premio {
+  id     String @id @default(uuid())
+  name   String
+  amount Int
+  info   String
+}
+
+model Rolette {
+  id             String @id @default(uuid())
+  name           String
+  title          String
+  subtitle       String
+  amountSlice    Int
+  limitUse       Int
+  primaryColor   String
+  secondaryColor String
+  bgColor        String
+  textColor      String
+  premios        String //lista de premios separados por virgulas
+}
+
+model Balao {
+  id             String @id @default(uuid())
+  name           String
+  title          String
+  subtitle       String
+  amountSlice    Int
+  limitUse       Int
+  primaryColor   String
+  secondaryColor String
+  bgColor        String
+  premios        String //lista de premios separados por virgulas
+}
+
+model Ips {
+  id     String @id @default(uuid())
+  name   String
+  ip     String
+  played Int
+}
+
+model Winner {
+  id    String @id @default(uuid())
+  pName String
+  hash  String
+  date  String
+}
+
+model Utils {
+  id  String @id @default(uuid())
+  url String
+  zap String
+}

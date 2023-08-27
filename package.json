@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts --fix",
+    "build": "tsup src",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "author": "Bruno Wanderson",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/fastify-cors": "^2.1.0",
+    "@types/node": "^20.5.0",
+    "eslint": "^8.47.0",
+    "prisma": "^5.1.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@prisma/client": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.21.0",
+    "fastify-cors": "^6.1.0",
+    "zod": "^3.22.1"
+  }
+}
